@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/lib/GLAD/include",
+                "${workspaceFolder}/lib/GLFW/include",
+                "${workspaceFolder}/lib/GLFW/include",
+                "C:/Users/aurij/source/repos"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerPath": "D:/Extra/GCC/mingw64/bin/g++.exe"
+        }
+    ],
+    "version": 4
+}

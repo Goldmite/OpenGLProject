@@ -1,0 +1,13 @@
+{
+    "files.autoSave": "afterDelay",
+    "code-runner.executorMap": {
+        //Linking against specific file:
+        //https://stackoverflow.com/questions/33563416/linking-libraries-with-mingw
+        //Specify include directory:
+        //https://stackoverflow.com/questions/12919081/gcc-g-no-such-file-or-directory
+        //whole command breakdown:
+        // g++ || main file name || path to glad.c || path to dynamic glfw file that we link against || glfw inlcude path || glad include path || output
+        "cpp": "g++ $fullFileName lib/glad/src/glad.c lib/glfw/lib-mingw-w64/libglfw3dll.a -Ilib/glfw/include -Ilib/glad/include -o $fileNameWithoutExt.exe && .\\$fileNameWithoutExt.exe"
+        //g++ main.cpp -Llib/glfw-WIN32/lib-mingw-w64 -lglfw3dll -Llib/glad -Ilib/glfw-WIN32/include -Ilib/glad/include 
+    },
+}
