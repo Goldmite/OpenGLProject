@@ -141,4 +141,9 @@ I didn't go in depth of the main.cpp file because it isn't very friendly-looking
 
 I can see how this could be optimized for performance in the future, for example implementing a quadtree: https://en.wikipedia.org/wiki/Quadtree
 
+A couple experimental images:
+- 1024 boids
+![Boids1024](https://github.com/Goldmite/OpenGLProject/assets/52678568/bdac8ec9-1964-47e4-b957-a59ad6b3ae92)
+- 4096 boids
+![Boids4096](https://github.com/Goldmite/OpenGLProject/assets/52678568/f56267c0-a31d-467c-9dac-806ad859b57a)
 
