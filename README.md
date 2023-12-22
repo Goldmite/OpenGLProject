@@ -5,7 +5,7 @@
 A boid is a "bird-oid object" which essentially simulate the natural movement of a flock of birds or school of fish following 3 simple rules:
 - Cohesion: force to form a flock.
 - Alignment: force to follow a similar general direction of nearby boids.
-- Seperation: keep a distance between each boid to avoid collision.
+- Separation: keep a distance between each boid to avoid collision.
 > **Note:** Boids also have a field of view (FOV) cone, which replicates the vision of a bird, and the rules only apply to what is within tho FOV. I wanted to see the behaviour if I left the FOV unmanaged, therefore these boids see in all directions.
 
 
@@ -64,12 +64,12 @@ This contains an structure array of boids with the positional variables: x,y and
 
 There are multiple adjustable variables which lead to different behaviours and output and the main ones are weights for how much influence each rule has.
 ```
-float CohesionIndex = 1.3, AlignmentIndex = 1.15, SeperationIndex = 0.075;
+float CohesionIndex = 1.3, AlignmentIndex = 1.15, SeparationIndex = 0.075;
 ```
 
-1. Seperation
+1. Separation
 ```
-if (SeperationIndex != 0) {
+if (SeparationIndex != 0) {
     if (CurrentBoid.x < otherboid.x) { //x smaller than center of mass x 
         if (CurrentBoid.y < otherboid.y) { //y smaller than center of mass y 
             avoidAngle = PI + atan((otherboid.y - CurrentBoid.y) / (otherboid.x - CurrentBoid.x));
@@ -85,8 +85,8 @@ if (SeperationIndex != 0) {
     } else if (CurrentBoid.x == otherboid.x && CurrentBoid.y == otherboid.y) {
         avoidAngle = ID; //randomly angle them if they're too close
     }
-    CurrentBoid.x += SeperationIndex * (moveSpeed * AvoidSpeed) * cos(avoidAngle);
-    CurrentBoid.y += SeperationIndex * (moveSpeed * AvoidSpeed) * sin(avoidAngle);
+    CurrentBoid.x += SeparationIndex * (moveSpeed * AvoidSpeed) * cos(avoidAngle);
+    CurrentBoid.y += SeparationIndex * (moveSpeed * AvoidSpeed) * sin(avoidAngle);
 }
 ```
 This "if else" nest essentially checks in which quadrant of a circle (where the center is the flock's center) is our current boid located.
